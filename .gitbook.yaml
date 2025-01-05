@@ -1,0 +1,12 @@
+root: ./
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md
+
+redirects:
+  architecture: docs/architecture/overview.md
+  tutorials: docs/tutorials/first-bot.md
+  examples: docs/examples/neural-networks.md
+  api: docs/api/core.md
+  community: docs/community/discord.md
