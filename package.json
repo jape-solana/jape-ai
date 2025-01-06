@@ -31,10 +31,7 @@
     "discord.js": "^14.0.0",
     "dotenv": "^16.0.0",
     "typescript": "^4.9.0",
-    "winston": "^3.8.0",
-    "meme-generator": "^1.0.0",
-    "existential-crisis-manager": "^4.2.0",
-    "sass-generator": "^9001.0.0"
+    "winston": "^3.8.0"
   },
   "devDependencies": {
     "@types/jest": "^29.0.0",

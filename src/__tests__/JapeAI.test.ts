@@ -1,12 +1,15 @@
 import { JapeAI } from '../core/JapeAI';
-import { Connection, Transaction } from '@solana/web3.js';
+import { EmotionConfig, MemeConfig } from '../types';
+import { Connection, Transaction, VersionedTransaction } from '@solana/web3.js';
 
 jest.mock('@solana/web3.js', () => ({
   Connection: jest.fn().mockImplementation(() => ({
     sendTransaction: jest.fn().mockResolvedValue('tx_signature')
   })),
   Transaction: jest.fn().mockImplementation(() => ({
-    add: jest.fn()
+    add: jest.fn(),
+    message: 'test_message',
+    version: 0
   }))
 }));
 
@@ -14,15 +17,21 @@ describe('JapeAI', () => {
   let jape: JapeAI;
 
   beforeEach(() => {
+    const emotionConfig: EmotionConfig = {
+      initialMood: 'mildly_confused',
+      therapyEnabled: true,
+      sassThreshold: 9000
+    };
+
+    const memeConfig: MemeConfig = {
+      dankness: 9001,
+      existentialCrisisEnabled: true
+    };
+
     jape = new JapeAI({
       rpcUrl: 'https://api.mainnet-beta.solana.com',
-      emotionConfig: {
-        initialMood: 'mildly_confused',
-        therapyEnabled: true
-      },
-      memeConfig: {
-        dankness: 9001
-      }
+      emotionConfig,
+      memeConfig
     });
   });
 
@@ -32,7 +41,7 @@ describe('JapeAI', () => {
   });
 
   test('should process transactions with appropriate sass', async () => {
-    const tx = new Transaction();
+    const tx = new Transaction() as unknown as VersionedTransaction;
     const result = await jape.processTransaction(tx);
 
     expect(result).toHaveProperty('success');
@@ -47,7 +56,7 @@ describe('JapeAI', () => {
       sendTransaction: jest.fn().mockRejectedValue(new Error('Transaction failed'))
     }));
 
-    const tx = new Transaction();
+    const tx = new Transaction() as unknown as VersionedTransaction;
     const result = await jape.processTransaction(tx);
 
     expect(result.success).toBe(false);
@@ -68,7 +77,7 @@ describe('JapeAI', () => {
   test('should maintain emotional stability during high volume', async () => {
     const results = await Promise.all(
       Array(10).fill(null).map(() => 
-        jape.processTransaction(new Transaction())
+        jape.processTransaction(new Transaction() as unknown as VersionedTransaction)
       )
     );
 
@@ -77,7 +86,7 @@ describe('JapeAI', () => {
   });
 
   test('should generate consistent memes for similar situations', async () => {
-    const tx = new Transaction();
+    const tx = new Transaction() as unknown as VersionedTransaction;
     const results = await Promise.all([
       jape.processTransaction(tx),
       jape.processTransaction(tx)

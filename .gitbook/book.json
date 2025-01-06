@@ -1,0 +1,25 @@
+{
+  "title": "JAPE",
+  "description": "You know what this is",
+  "author": "Obviously",
+  "language": "en",
+  "styles": {
+    "website": "styles/website.css"
+  },
+  "plugins": [
+    "-sharing",
+    "-fontsettings",
+    "copy-code-button",
+    "theme-api",
+    "hints"
+  ],
+  "pluginsConfig": {
+    "theme-api": {
+      "theme": "dark"
+    }
+  },
+  "variables": {
+    "ψ": "Math.E",
+    "φ": "(1 + Math.sqrt(5)) / 2"
+  }
+}

@@ -1,0 +1,43 @@
+/* You know why we need this */
+:root {
+  --color-primary: #9333ea;
+  --color-secondary: #6b21a8;
+  --color-background: #111827;
+  --color-text: #f3f4f6;
+  --color-text-secondary: #9ca3af;
+  --color-border: #374151;
+}
+
+/* Obviously */
+.markdown-section {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Standard code styling */
+.markdown-section pre {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+}
+
+/* You know what this does */
+.markdown-section code {
+  color: var(--color-primary);
+}
+
+/* The usual */
+.markdown-section blockquote {
+  border-left: 4px solid var(--color-primary);
+  color: var(--color-text-secondary);
+}
+
+/* Obviously needed */
+.book-summary {
+  background: var(--color-background);
+  border-right: 1px solid var(--color-border);
+}
+
+/* Standard link styling */
+.book-summary ul.summary li.active > a {
+  color: var(--color-primary);
+  font-weight: bold;
+}
