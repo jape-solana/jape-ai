@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #14b8a6;
+  --primary-dark: #0d9488;
+  --primary-light: #5eead4;
+  --background: #0f172a;
+  --background-light: #1e293b;
+  --text: #f8fafc;
+  --text-secondary: #94a3b8;
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-background text-text min-h-screen;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-light to-primary bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-background-light/40 backdrop-blur-md border border-primary/10 rounded-2xl transition-all duration-300;
+  }
+
+  .hover-glow {
+    @apply hover:shadow-[0_0_30px_rgba(20,184,166,0.3)] transition-shadow duration-300;
+  }
+
+  .button-primary {
+    @apply px-6 py-3 bg-primary hover:bg-primary-dark rounded-lg transition-colors duration-300;
+  }
+
+  .button-secondary {
+    @apply px-6 py-3 border border-primary text-primary hover:bg-primary/10 rounded-lg transition-colors duration-300;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(20, 184, 166, 0.2);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 30px rgba(20, 184, 166, 0.4);
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
