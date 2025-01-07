@@ -1,37 +1,37 @@
-# Table of Contents
+# man jape
 
-## 🎮 Getting Started
-* [Introduction](docs/introduction.md)
-* [Quick Start Guide](docs/quickstart.md)
-* [Installation](docs/installation.md)
+## ψ Core
+* [RTFM](docs/introduction.md)
+* [TL;DR](docs/quickstart.md)
+* [init.d](docs/installation.md)
 
-## 🎨 Core Concepts
-* [Architecture Overview](docs/architecture/overview.md)
-* [The Jape Protocol](docs/architecture/protocol.md)
-* [AI Components](docs/architecture/ai-components.md)
-* [Solana Integration](docs/architecture/solana-integration.md)
+## Ξ Runtime
+* [/proc](docs/architecture/overview.md)
+* [IPC](docs/architecture/protocol.md)
+* [AST](docs/architecture/ai-components.md)
+* [FFI](docs/architecture/solana-integration.md)
 
-## 🎯 Tutorials
-* [Building Your First Jape Bot](docs/tutorials/first-bot.md)
-* [Advanced AI Training](docs/tutorials/advanced-training.md)
-* [Custom Neural Networks](docs/tutorials/custom-networks.md)
+## λ DSA
+* [O(1)](docs/tutorials/first-bot.md)
+* [DAG](docs/tutorials/advanced-training.md)
+* [FSM](docs/tutorials/custom-networks.md)
 
-## 🎪 Examples
-* [Fun with Neural Networks](docs/examples/neural-networks.md)
-* [Chaos Engineering](docs/examples/chaos-engineering.md)
-* [Meme Generation](docs/examples/meme-generation.md)
+## Φ POC
+* [MVP](docs/examples/neural-networks.md)
+* [WIP](docs/examples/chaos-engineering.md)
+* [RFC](docs/examples/meme-generation.md)
 
-## 🎭 API Reference
-* [Core API](docs/api/core.md)
-* [AI Modules](docs/api/ai-modules.md)
-* [Solana Interfaces](docs/api/solana.md)
+## Ω API
+* [SDK](docs/api/core.md)
+* [ABI](docs/api/ai-modules.md)
+* [RPC](docs/api/solana.md)
 
-## 🎨 Contributing
-* [Contributing Guide](docs/contributing.md)
-* [Code of Conduct](docs/code-of-conduct.md)
-* [Development Setup](docs/development.md)
+## η DevOps
+* [k8s](docs/community/discord.md)
+* [CI/CD](docs/community/twitter.md)
+* [SRE](docs/community/meetups.md)
 
-## 🎪 Community
-* [Discord Server](docs/community/discord.md)
-* [Twitter Updates](docs/community/twitter.md)
-* [Monthly Meetups](docs/community/meetups.md)
+## ∞ OSS
+* [CONTRIBUTING.md](docs/contributing.md)
+* [RFC](docs/code-of-conduct.md)
+* [Makefile](docs/development.md)
