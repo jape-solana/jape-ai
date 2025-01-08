@@ -10,16 +10,101 @@
   --background-light: #1e293b;
   --text: #f8fafc;
   --text-secondary: #94a3b8;
+  --matrix-green: #00ff00;
+  --cyber-black: #000000;
+  --neon-glow: 0 0 10px var(--matrix-green),
+               0 0 20px var(--matrix-green),
+               0 0 30px var(--matrix-green);
 }
 
-@layer base {
-  html {
-    @apply antialiased;
-  }
+body {
+  @apply bg-background text-text min-h-screen;
+  background-color: var(--cyber-black);
+  color: #ffffff;
+  font-family: 'Hack', monospace;
+}
 
-  body {
-    @apply bg-background text-text min-h-screen;
+/* Terminal Effect */
+.typing-effect {
+  border-right: 2px solid var(--matrix-green);
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: 'Hack', monospace;
+}
+
+/* Matrix Rain Effect */
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100%);
   }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.glitch {
+  animation: glitch 500ms infinite;
+  animation-timing-function: steps(2, end);
+}
+
+/* Neon Text Effect */
+.neon-text {
+  color: var(--matrix-green);
+  text-shadow: var(--neon-glow);
+}
+
+/* Cyber Card */
+.cyber-card {
+  background: rgba(0, 255, 0, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cyber-card:hover {
+  border-color: var(--matrix-green);
+  box-shadow: var(--neon-glow);
+}
+
+/* Scanline Effect */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scanline::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 255, 0, 0.1);
+  animation: scanline 6s linear infinite;
 }
 
 @layer components {
